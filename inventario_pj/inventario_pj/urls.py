@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/login/')),
     path('admin/', admin.site.urls),
     path('', include('sistema.urls')),
+    path('', RedirectView.as_view(url='/login/')),  # redirige raíz al login
 ]
